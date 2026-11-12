@@ -36,7 +36,12 @@ export const Footer = () => {
         <span onClick={goUp} className={styles.btnLabel}>
           Back to top
         </span>
-        <button onClick={goUp} className={styles.btn} name="btn">
+        <button
+          onClick={goUp}
+          className={styles.btn}
+          name="btn"
+          aria-label="Back to top"
+        >
           <img
             className={styles.btnImg}
             src="icons/chevron-arrow-up.svg"

@@ -59,9 +59,9 @@ export const Cart = () => {
       ) : (
         <div className={styles.container}>
           <Modal isModalOpen={isModalOpen} setIsModelOpen={setIsModalOpen}>
-            <h4 className={styles.modalTitle}>
+            <h2 className={styles.modalTitle}>
               Checkout is not implemented yet. Do you want to clear the cart?
-            </h4>
+            </h2>
             <div className={styles.modalButtons}>
               <button
                 onClick={handleConfirm}
@@ -100,7 +100,7 @@ export const Cart = () => {
               {cartItems.length > 0 && (
                 <div className={styles.totalContainer}>
                   <div className={styles.info}>
-                    <h2 className={styles.price}>${totalPrice}</h2>
+                    <span className={styles.price}>${totalPrice}</span>
                     <span className={styles.counter}>
                       Total for {cartIds.length} items
                     </span>

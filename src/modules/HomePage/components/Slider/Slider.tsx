@@ -1,29 +1,12 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Slider.module.scss';
 import cn from 'classnames';
-import { debounce } from '@utils/debounce';
 import { sliderData } from '@type/SliderData';
 
 const SLIDER_DELAY = 5000;
-const MIN_TABLET_SCREEN_SIZE = 640;
-const RESIZE_DELAY = 100;
 
 export const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth : 0,
-  );
-
-  const handleResize = useMemo(
-    () => debounce(() => setWindowWidth(window.innerWidth), RESIZE_DELAY),
-    [],
-  );
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, [handleResize]);
 
   const goNext = () => {
     setCurrentSlide(prev => (prev === sliderData.length - 1 ? 0 : prev + 1));
@@ -59,19 +42,20 @@ export const Slider = () => {
                 className={styles.sliderLink}
                 href={slide.link}
                 key={`slide-btn-${slide.alt}`}
+                aria-label={slide.alt}
                 rel="noreferrer"
                 target="_blank"
               >
-                <img
-                  className={styles.sliderImg}
-                  src={
-                    windowWidth >= MIN_TABLET_SCREEN_SIZE
-                      ? slide.url
-                      : slide.croppedImgUrl
-                  }
-                  alt={slide.alt}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                />
+                <picture className={styles.sliderPicture}>
+                  <source media="(min-width: 640px)" srcSet={slide.url} />
+                  <img
+                    className={styles.sliderImg}
+                    src={slide.croppedImgUrl}
+                    alt={slide.alt}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    fetchPriority={index === 0 ? 'high' : 'auto'}
+                  />
+                </picture>
               </a>
             ))}
           </div>
@@ -88,6 +72,7 @@ export const Slider = () => {
               [styles.active]: currentSlide === index,
             })}
             onClick={() => setCurrentSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
           ></button>
         ))}
       </div>

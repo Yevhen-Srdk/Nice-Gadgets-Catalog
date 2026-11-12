@@ -33,12 +33,14 @@ export const CartCard = ({ cartItem }: Props) => {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardTop}>
-        <img
+        <button
+          type="button"
           onClick={() => deleteItem(cartItem.id)}
           className={styles.cardClose}
-          src="icons/close.svg"
-          alt="close"
-        />
+          aria-label={`Remove ${cartItem.name} from cart`}
+        >
+          <img src="icons/close.svg" alt="" aria-hidden="true" />
+        </button>
         <Link
           to={`../product/${cartItem.category}/${cartItem.id}`}
           className={styles.imgContainer}
@@ -54,7 +56,7 @@ export const CartCard = ({ cartItem }: Props) => {
           to={`../product/${cartItem.category}/${cartItem.id}`}
           className={styles.cardTitleLink}
         >
-          <p className={styles.cardTitle}>{cartItem.name}</p>
+          <h3 className={styles.cardTitle}>{cartItem.name}</h3>
         </Link>
       </div>
       <div className={styles.cardBottom}>
@@ -63,6 +65,7 @@ export const CartCard = ({ cartItem }: Props) => {
             disabled={countItemLength() === 1}
             onClick={() => decreaseTheCounter(cartItem.id)}
             className={styles.btn}
+            aria-label="Decrease quantity"
           >
             <img src="icons/minus.svg" alt="minus" />
           </button>
@@ -70,11 +73,12 @@ export const CartCard = ({ cartItem }: Props) => {
           <button
             onClick={() => increaseTheCounter(cartItem.id)}
             className={styles.btn}
+            aria-label="Increase quantity"
           >
             <img src="icons/plus.svg" alt="plus" />
           </button>
         </div>
-        <h3 className={styles.price}>${cartItem.price}</h3>
+        <span className={styles.price}>${cartItem.price}</span>
       </div>
     </div>
   );

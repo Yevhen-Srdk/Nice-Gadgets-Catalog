@@ -18,12 +18,14 @@ export const ProductCarousel = ({ children, title }: Props) => {
           <button
             onClick={() => scrollProducts('left', cardContainerRef)}
             className={styles.control}
+            aria-label={`Scroll ${title} left`}
           >
             <img src="icons/chevron-arrow-left.svg" alt="arrow-left" />
           </button>
           <button
             onClick={() => scrollProducts('right', cardContainerRef)}
             className={styles.control}
+            aria-label={`Scroll ${title} right`}
           >
             <img src="icons/chevron-arrow-right.svg" alt="arrow-right" />
           </button>

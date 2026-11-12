@@ -66,6 +66,7 @@
 }
 
 .control {
+  position: relative;
   width: 32px;
   height: 32px;
   background-color: vars.$white-color;
@@ -73,6 +74,16 @@
   cursor: pointer;
 
   transition: border-color vars.$transition-duration vars.$transition-timing;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 44px;
+    min-height: 44px;
+  }
 
   &:hover {
     border: 1px solid vars.$primary-color;

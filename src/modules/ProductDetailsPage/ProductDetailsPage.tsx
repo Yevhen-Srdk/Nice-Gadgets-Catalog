@@ -197,11 +197,11 @@ export const ProductDetailsPage = () => {
                   </Link>
                 </div>
 
-                <h2
+                <h1
                   className={`${styles.productTitle} ${styles.productTitleMod}`}
                 >
                   {product?.name}
-                </h2>
+                </h1>
 
                 <div className={styles.productInfo}>
                   <div className={styles.photos}>
@@ -228,6 +228,7 @@ export const ProductDetailsPage = () => {
                           className={styles.previewBtn}
                           key={img.id}
                           onClick={() => setCurrentImgId(img.id)}
+                          aria-label={`View photo ${img.id}`}
                         >
                           <img
                             className={styles.previewImg}
@@ -257,6 +258,7 @@ export const ProductDetailsPage = () => {
                               }}
                               className={`${styles.colorBtn} ${colorItem === product.color ? styles.isActive : ''}`}
                               key={colorItem}
+                              aria-label={`Select color ${colorItem}`}
                             ></button>
                           ))}
                         </div>
@@ -276,6 +278,7 @@ export const ProductDetailsPage = () => {
                                 capacityItem === product.capacity,
                             })}
                             key={capacityItem}
+                            aria-label={`Select capacity ${capacityItem}`}
                           >
                             {capacityItem}
                           </button>
@@ -285,9 +288,9 @@ export const ProductDetailsPage = () => {
 
                     <div className={styles.priceContainer}>
                       <div className={styles.priceTitles}>
-                        <h2 className={styles.currentPrice}>
+                        <span className={styles.currentPrice}>
                           ${product?.priceDiscount}
-                        </h2>
+                        </span>
                         <p className={styles.regularPrice}>
                           ${product?.priceRegular}
                         </p>
@@ -308,6 +311,11 @@ export const ProductDetailsPage = () => {
                         <button
                           onClick={() => toggleFavorites(Number(productId))}
                           className={styles.favoritesBtn}
+                          aria-label={
+                            favoritesIds.includes(Number(productId))
+                              ? 'Remove from favorites'
+                              : 'Add to favorites'
+                          }
                         >
                           <img
                             className={styles.favorites}
@@ -378,15 +386,15 @@ export const ProductDetailsPage = () => {
 
               <div className={styles.productDetailInfo}>
                 <div className={styles.about}>
-                  <h3
+                  <h2
                     className={`${styles.aboutTitle} ${styles.aboutTitleMod}`}
                   >
                     About
-                  </h3>
+                  </h2>
 
                   {product?.description.map((item, index) => (
                     <section key={index} className={styles.aboutSection}>
-                      <h4 className={styles.aboutSectionTitle}>{item.title}</h4>
+                      <h3 className={styles.aboutSectionTitle}>{item.title}</h3>
 
                       {item.text.map((paragraph, paragraphIndex) => (
                         <p
@@ -401,9 +409,9 @@ export const ProductDetailsPage = () => {
                 </div>
 
                 <div className={styles.techSpecs}>
-                  <h3 className={`${styles.techTitle} ${styles.techTitleMod}`}>
+                  <h2 className={`${styles.techTitle} ${styles.techTitleMod}`}>
                     Tech specs
-                  </h3>
+                  </h2>
 
                   <dl className={styles.techSpecContainer}>
                     {allSpecs.map((spec, index) => (

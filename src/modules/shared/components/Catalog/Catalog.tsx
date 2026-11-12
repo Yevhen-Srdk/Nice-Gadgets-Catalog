@@ -157,6 +157,7 @@ export const Catalog = ({
               setCurrentPage?.(currentPage !== 1 ? currentPage - 1 : 1);
             }}
             className={styles.controlBtn}
+            aria-label="Previous page"
           >
             <img src="icons/chevron-arrow-left.svg" alt="left" />
           </button>
@@ -170,6 +171,7 @@ export const Catalog = ({
                   setCurrentPage?.(page);
                 }}
                 key={page}
+                aria-label={`Page ${page}`}
               >
                 {page}
               </button>
@@ -182,6 +184,7 @@ export const Catalog = ({
               );
             }}
             className={styles.controlBtn}
+            aria-label="Next page"
           >
             <img src="icons/chevron-arrow-right.svg" alt="right" />
           </button>

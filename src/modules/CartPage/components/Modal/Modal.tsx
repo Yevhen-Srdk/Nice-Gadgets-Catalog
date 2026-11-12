@@ -20,7 +20,11 @@ export const Modal = ({ isModalOpen, setIsModelOpen, children }: Props) => {
   return createPortal(
     <div onClick={handleClose} className={styles.overlay}>
       <div className={styles.modal} onClick={e => e.stopPropagation()}>
-        <button onClick={handleClose} className={styles.closeBtn}>
+        <button
+          onClick={handleClose}
+          className={styles.closeBtn}
+          aria-label="Close modal"
+        >
           <img src="icons/close.svg" alt="close" />
         </button>
         {children}

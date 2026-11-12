@@ -18,7 +18,7 @@ export const CategoryItem = ({ item }: Props) => {
         />
       </div>
       <div className={styles.info}>
-        <h4 className={styles.categoryTitle}>{item.title}</h4>
+        <h3 className={styles.categoryTitle}>{item.title}</h3>
         <span className={styles.counter}>{item.count} models</span>
       </div>
     </Link>

@@ -61,6 +61,7 @@ export const Menu = ({ isMenuOpen, setIsMenuOpen }: Props) => {
             return `${styles.favorites} ${getActiveClass(isActive)}`;
           }}
           to={'/favorites'}
+          aria-label="Favorites"
           onClick={closeMenu}
         >
           <img src="icons/favorites.svg" alt="Favorites" />
@@ -71,6 +72,7 @@ export const Menu = ({ isMenuOpen, setIsMenuOpen }: Props) => {
             return `${styles.cart} ${getActiveClass(isActive)}`;
           }}
           to={'/cart'}
+          aria-label="Cart"
           onClick={closeMenu}
         >
           <img src="icons/cart.svg" alt="Cart" />

@@ -44,6 +44,7 @@ export const Header = ({ isMenuOpen, setIsMenuOpen }: Props) => {
               return `${styles.favorites} ${getActiveClass(isActive)}`;
             }}
             to={'/favorites'}
+            aria-label="Favorites"
           >
             <img src="icons/favorites.svg" alt="Favorites" />
             {favoritesIds.length > 0 && <Counter count={favoritesIds.length} />}
@@ -54,6 +55,7 @@ export const Header = ({ isMenuOpen, setIsMenuOpen }: Props) => {
               return `${styles.cart} ${getActiveClass(isActive)}`;
             }}
             to={'/cart'}
+            aria-label="Cart"
           >
             <img src="icons/cart.svg" alt="Cart" />
             {cartIds.length > 0 && <Counter count={cartIds.length} />}
@@ -62,6 +64,7 @@ export const Header = ({ isMenuOpen, setIsMenuOpen }: Props) => {
             type="button"
             className={styles.burgerBtn}
             onClick={handleClick}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
             <img
               src={isMenuOpen ? 'icons/close.svg' : 'icons/menu.svg'}

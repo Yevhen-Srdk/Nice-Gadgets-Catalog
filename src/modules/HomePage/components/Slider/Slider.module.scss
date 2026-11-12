@@ -76,6 +76,12 @@
   }
 }
 
+.sliderPicture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .sliderImg {
   width: 100%;
   height: 100%;
@@ -89,11 +95,22 @@
 }
 
 .sliderBtn {
+  position: relative;
   width: 14px;
   height: 4px;
   border-radius: 0;
   border: none;
   cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 32px;
+  }
 }
 
 .active {

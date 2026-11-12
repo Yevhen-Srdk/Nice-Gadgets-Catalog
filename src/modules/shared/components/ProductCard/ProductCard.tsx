@@ -39,10 +39,10 @@ export const ProductCard = ({ product, isOldPriceVisible }: Props) => {
         className={styles.linkTitleContainer}
         to={`/product/${product.category}/${product.id}`}
       >
-        <p className={styles.cardTitle}>{product.name}</p>
+        <h3 className={styles.cardTitle}>{product.name}</h3>
       </Link>
       <div className={styles.priceContainer}>
-        <h3 className={styles.price}>${product.price}</h3>
+        <span className={styles.price}>${product.price}</span>
         {isOldPriceVisible && (
           <p className={styles.fullPrice}>${product.fullPrice}</p>
         )}
@@ -72,6 +72,11 @@ export const ProductCard = ({ product, isOldPriceVisible }: Props) => {
           <button
             onClick={() => toggleFavorites(product.id)}
             className={styles.favoritesBtn}
+            aria-label={
+              favoritesIds.includes(product.id)
+                ? 'Remove from favorites'
+                : 'Add to favorites'
+            }
           >
             <img
               className={styles.favorites}
