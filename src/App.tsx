@@ -1,14 +1,14 @@
 import './App.scss';
 import { HomePage } from './modules/HomePage';
 import { PhonesPage } from './modules/PhonesPage';
-import { Layout } from './modules/shared/components/Layout';
+import { Layout } from '@shared/components/Layout';
 import { Route, Routes } from 'react-router-dom';
 import { TabletsPage } from './modules/TabletsPage';
 import { AccessoriesPage } from './modules/AccessoriesPage';
 import { FavoritesPage } from './modules/FavoritesPage';
 import { Cart } from './modules/CartPage';
 import { NotFoundPage } from './modules/NotFoundPage';
-import { AppProvider } from './context/AppContext';
+import { AppProvider } from '@context/AppContext';
 import { ProductDetailsPage } from './modules/ProductDetailsPage';
 
 export const App = () => {

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Menu.module.scss';
-import { useAppContext } from '../../../../../../context/AppContext';
+import { useAppContext } from '@context/AppContext';
 import { Counter } from '../Counter';
 
 type Props = {

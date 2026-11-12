@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Product } from '../../types/Product';
-import { Catalog } from '../shared/components/Catalog';
-import { Loader } from '../shared/components/Loader/Loader';
-import { ProductCard } from '../shared/components/ProductCard/ProductCard';
+import { Product } from '@type/Product';
+import { Catalog } from '@shared/components/Catalog';
+import { Loader } from '@shared/components/Loader/Loader';
+import { ProductCard } from '@shared/components/ProductCard/ProductCard';
 import styles from './FavoritesPage.module.scss';
-import { useAppContext } from '../../context/AppContext';
-import { getProducts } from '../../utils/api';
+import { useAppContext } from '@context/AppContext';
+import { getProducts } from '@utils/api';
 
 export const FavoritesPage = () => {
   const [favorites, setFavorites] = useState<Product[]>([]);
@@ -40,6 +40,7 @@ export const FavoritesPage = () => {
               className={styles.brokenHeart}
               src="icons/broken-heart.png"
               alt="broken-heart"
+              loading="lazy"
             />
           )}
         </>

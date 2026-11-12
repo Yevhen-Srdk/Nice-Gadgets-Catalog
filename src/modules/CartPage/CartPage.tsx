@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './CartPage.module.scss';
-import { useAppContext } from '../../context/AppContext';
+import { useAppContext } from '@context/AppContext';
 import { useEffect, useMemo, useState } from 'react';
-import { getProducts } from '../../utils/api';
-import { Product } from '../../types/Product';
+import { getProducts } from '@utils/api';
+import { Product } from '@type/Product';
 import { CartCard } from './components/CartCard';
-import { Loader } from '../shared/components/Loader/Loader';
+import { Loader } from '@shared/components/Loader/Loader';
 import { Modal } from './components/Modal';
 
 export const Cart = () => {

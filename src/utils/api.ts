@@ -1,7 +1,7 @@
-import { Accessory } from '../types/Accessory';
-import { Phone } from '../types/Phone';
-import { Product } from '../types/Product';
-import { Tablet } from '../types/Tablet';
+import { Accessory } from '@type/Accessory';
+import { Phone } from '@type/Phone';
+import { Product } from '@type/Product';
+import { Tablet } from '@type/Tablet';
 
 export const getPhones = (): Promise<Phone[]> => {
   return fetch('api/phones.json').then(data => data.json());

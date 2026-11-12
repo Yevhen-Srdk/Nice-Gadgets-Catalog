@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import styles from './Slider.module.scss';
 import cn from 'classnames';
-import { debounce } from 'lodash';
-import { sliderData } from '../../../../types/SliderData';
+import { debounce } from '@utils/debounce';
+import { sliderData } from '@type/SliderData';
 
 const SLIDER_DELAY = 5000;
 const MIN_TABLET_SCREEN_SIZE = 640;
@@ -54,7 +54,7 @@ export const Slider = () => {
             className={styles.track}
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
-            {sliderData.map(slide => (
+            {sliderData.map((slide, index) => (
               <a
                 className={styles.sliderLink}
                 href={slide.link}
@@ -70,6 +70,7 @@ export const Slider = () => {
                       : slide.croppedImgUrl
                   }
                   alt={slide.alt}
+                  loading={index === 0 ? 'eager' : 'lazy'}
                 />
               </a>
             ))}

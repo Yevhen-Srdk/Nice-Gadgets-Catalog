@@ -127,7 +127,7 @@
   background-color: vars.$white-color;
   color: vars.$primary-color;
 
-  transition: border .2s ease-in;
+  transition: border-color vars.$transition-duration vars.$transition-timing;
 
   &:hover {
     border: 1px solid vars.$primary-color;
@@ -154,10 +154,13 @@
   border: 1px solid vars.$icons-color;
 
   visibility: hidden;
-  transition: all .2s ease-in;
+  opacity: 0;
+  transition: opacity vars.$transition-duration vars.$transition-timing,
+    visibility vars.$transition-duration vars.$transition-timing;
 
   &.isOpen {
     visibility: visible;
+    opacity: 1;
   }
 }
 

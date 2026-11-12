@@ -29,7 +29,7 @@
     color: vars.$secondary-color;
     text-decoration: none;
 
-    transition: color .2s ease-in;
+    transition: color vars.$transition-duration vars.$transition-timing;
 
     &:hover {
       color: vars.$primary-color;
@@ -62,7 +62,7 @@
   font-weight: 600;
   color: vars.$secondary-color;
   cursor: pointer;
-  transition: color .2s ease-in;
+  transition: color vars.$transition-duration vars.$transition-timing;
 
   &:hover {
     color: vars.$primary-color;
@@ -75,7 +75,7 @@
   background-color: #fff;
 
   border: 1px solid vars.$icons-color;
-  transition: border .2s ease-in;
+  transition: border-color vars.$transition-duration vars.$transition-timing;
 
   cursor: pointer;
 

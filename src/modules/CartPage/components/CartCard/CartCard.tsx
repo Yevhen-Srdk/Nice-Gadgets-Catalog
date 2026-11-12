@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useAppContext } from '../../../../context/AppContext';
-import { Product } from '../../../../types/Product';
+import { useAppContext } from '@context/AppContext';
+import { Product } from '@type/Product';
 import styles from './CartCard.module.scss';
 
 type Props = {
@@ -47,6 +47,7 @@ export const CartCard = ({ cartItem }: Props) => {
             className={styles.cardImg}
             src={cartItem.image}
             alt={cartItem.name}
+            loading="lazy"
           />
         </Link>
         <Link

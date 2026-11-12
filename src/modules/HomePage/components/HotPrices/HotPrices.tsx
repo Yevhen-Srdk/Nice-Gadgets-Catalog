@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Product } from '../../../../types/Product';
-import { getNewModels, getProducts } from '../../../../utils/api';
-import { ProductCarousel } from '../../../shared/components/ProductCarousel';
-import { ProductCard } from '../../../shared/components/ProductCard/';
+import { Product } from '@type/Product';
+import { getNewModels, getProducts } from '@utils/api';
+import { ProductCarousel } from '@shared/components/ProductCarousel';
+import { ProductCard } from '@shared/components/ProductCard';
 
 export const HotPrices = () => {
   const [products, setProducts] = useState<Product[]>([]);

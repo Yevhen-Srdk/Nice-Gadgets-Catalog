@@ -1,4 +1,4 @@
-import { Params } from '../types/ParamTypes';
+import { Params } from '@type/ParamTypes';
 
 export const getSearchWith = (
   params: Params,

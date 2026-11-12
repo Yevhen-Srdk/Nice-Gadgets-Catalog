@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CategoryItemData } from '../../../../../../types/CategoryItemData';
+import { CategoryItemData } from '@type/CategoryItemData';
 import styles from './CategoryItem.module.scss';
 
 type Props = {
@@ -13,7 +13,8 @@ export const CategoryItem = ({ item }: Props) => {
         <img
           className={styles.categoryImg}
           src={item.imgSrc}
-          alt={item.category}
+          alt={item.title || item.category}
+          loading="lazy"
         />
       </div>
       <div className={styles.info}>

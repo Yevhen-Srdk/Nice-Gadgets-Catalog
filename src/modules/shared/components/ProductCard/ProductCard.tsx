@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useAppContext } from '../../../../context/AppContext';
-import { Product } from '../../../../types/Product';
-import { toggleArrayIds } from '../../../../utils/toggleArrayIds';
+import { useAppContext } from '@context/AppContext';
+import { Product } from '@type/Product';
+import { toggleArrayIds } from '@utils/toggleArrayIds';
 import styles from './ProductCard.module.scss';
 import cn from 'classnames';
 
@@ -32,6 +32,7 @@ export const ProductCard = ({ product, isOldPriceVisible }: Props) => {
           className={styles.img}
           src={`${product.image}`}
           alt={product.name}
+          loading="lazy"
         />
       </Link>
       <Link

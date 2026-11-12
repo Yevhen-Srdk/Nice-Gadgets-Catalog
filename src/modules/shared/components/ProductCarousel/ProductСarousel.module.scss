@@ -72,7 +72,7 @@
   border: 1px solid vars.$icons-color;
   cursor: pointer;
 
-  transition: border .2s ease-in;
+  transition: border-color vars.$transition-duration vars.$transition-timing;
 
   &:hover {
     border: 1px solid vars.$primary-color;

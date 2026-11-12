@@ -5,6 +5,15 @@
   ],
   "compilerOptions": {
     "sourceMap": false,
-    "types": ["node"]
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "@type/*": ["src/types/*"],
+      "@shared/*": ["src/modules/shared/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@context/*": ["src/context/*"]
+    }
   }
 }

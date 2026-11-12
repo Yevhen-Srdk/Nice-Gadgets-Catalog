@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
 import styles from './Search.module.scss';
-import { Product } from '../../../../../../types/Product';
-import { getProducts } from '../../../../../../utils/api';
+import { Product } from '@type/Product';
+import { getProducts } from '@utils/api';
 import { Link } from 'react-router-dom';
 
 export const Search = () => {
@@ -76,6 +76,7 @@ export const Search = () => {
                   className={styles.prodImg}
                   src={product.image}
                   alt={product.name}
+                  loading="lazy"
                 />
                 <div className={styles.prodInfo}>
                   <span className={styles.prodTitle}>{product.name}</span>

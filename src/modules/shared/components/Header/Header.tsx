@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import { HeaderNav } from './components/HeaderNav';
 import styles from './Header.module.scss';
-import { useAppContext } from '../../../../context/AppContext';
+import { useAppContext } from '@context/AppContext';
 import { Counter } from './components/Counter';
 import { Search } from './components/Search';
 

@@ -15,13 +15,20 @@ export const Footer = () => {
         <a
           className={styles.navLink}
           href="https://github.com/Yevhen-Srdk/react_phone-catalog"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           GITHUB
         </a>
         <a className={styles.navLink} href="mailto:yevhen.srdk@gmail.com">
           CONTACTS
         </a>
-        <a className={styles.navLink} href="https://www.apple.com/ua/">
+        <a
+          className={styles.navLink}
+          href="https://www.apple.com/ua/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           RIGHTS
         </a>
       </nav>

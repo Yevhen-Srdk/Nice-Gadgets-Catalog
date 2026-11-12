@@ -1,4 +1,4 @@
-import { Product } from '../types/Product';
+import { Product } from '@type/Product';
 
 export const sortProducts = (
   products: Product[],

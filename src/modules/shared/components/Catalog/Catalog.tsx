@@ -1,11 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Product } from '../../../../types/Product';
+import { Product } from '@type/Product';
 import styles from './Catalog.module.scss';
 import cn from 'classnames';
-import { SortSelectData } from '../../../../types/SortSelectData';
+import { SortSelectData } from '@type/SortSelectData';
 import React, { useEffect, useState } from 'react';
-import { ItemsPerPageData } from '../../../../types/ItemPerPageData';
-import { NUMBER_OF_VISIBLE_BTNS } from '../../../../types/Constants';
+import { ItemsPerPageData } from '@type/ItemPerPageData';
+import { NUMBER_OF_VISIBLE_BTNS } from '@type/Constants';
 
 type Props = {
   title: string;

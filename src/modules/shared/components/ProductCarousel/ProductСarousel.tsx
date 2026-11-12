@@ -1,5 +1,5 @@
 import styles from './ProductСarousel.module.scss';
-import { scrollProducts } from '../../../../utils/scrollProducts';
+import { scrollProducts } from '@utils/scrollProducts';
 import { useRef } from 'react';
 
 type Props = {

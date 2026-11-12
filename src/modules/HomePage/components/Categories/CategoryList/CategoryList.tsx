@@ -1,14 +1,10 @@
 import styles from './CategoryList.module.scss';
 import { useEffect, useState } from 'react';
-import { Phone } from '../../../../../types/Phone';
-import { Accessory } from '../../../../../types/Accessory';
-import { Tablet } from '../../../../../types/Tablet';
-import {
-  getAccessories,
-  getPhones,
-  getTablets,
-} from '../../../../../utils/api';
-import { CategoryItemData } from '../../../../../types/CategoryItemData';
+import { Phone } from '@type/Phone';
+import { Accessory } from '@type/Accessory';
+import { Tablet } from '@type/Tablet';
+import { getAccessories, getPhones, getTablets } from '@utils/api';
+import { CategoryItemData } from '@type/CategoryItemData';
 import { CategoryItem } from './components';
 
 export const CategoryList = () => {

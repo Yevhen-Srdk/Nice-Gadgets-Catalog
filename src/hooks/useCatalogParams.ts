@@ -3,8 +3,8 @@ import {
   DEFAULT_SORT_VALUE,
   INITIAL_PAGE,
   DEFAULT_ITEMS_PER_PAGE,
-} from '../types/Constants';
-import { setSearchWith } from '../utils/paramsFunctions';
+} from '@type/Constants';
+import { setSearchWith } from '@utils/paramsFunctions';
 import { useCallback } from 'react';
 
 export const useCatalogParams = () => {

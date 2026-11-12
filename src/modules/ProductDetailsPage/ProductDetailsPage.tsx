@@ -1,25 +1,20 @@
 import { useEffect, useMemo, useState } from 'react';
 import styles from './ProductDetailsPage.module.scss';
-import { Loader } from '../shared/components/Loader/Loader';
+import { Loader } from '@shared/components/Loader/Loader';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import {
-  getAccessories,
-  getPhones,
-  getProducts,
-  getTablets,
-} from '../../utils/api';
-import { Product } from '../../types/Product';
-import { Phone } from '../../types/Phone';
-import { Tablet } from '../../types/Tablet';
-import { toggleArrayIds } from '../../utils/toggleArrayIds';
-import { useAppContext } from '../../context/AppContext';
+import { getAccessories, getPhones, getProducts, getTablets } from '@utils/api';
+import { Product } from '@type/Product';
+import { Phone } from '@type/Phone';
+import { Tablet } from '@type/Tablet';
+import { toggleArrayIds } from '@utils/toggleArrayIds';
+import { useAppContext } from '@context/AppContext';
 import cn from 'classnames';
-import { DetailedProduct } from '../../types/DetailProduct';
-import { ProductCarousel } from '../shared/components/ProductCarousel';
-import { ProductCard } from '../shared/components/ProductCard';
-import { COLOR_MAP } from '../../utils/colors';
-import { Accessory } from '../../types/Accessory';
-import { NUMBER_OF_VISIBLE_PRODUCTS } from '../../types/Constants';
+import { DetailedProduct } from '@type/DetailProduct';
+import { ProductCarousel } from '@shared/components/ProductCarousel';
+import { ProductCard } from '@shared/components/ProductCard';
+import { COLOR_MAP } from '@utils/colors';
+import { Accessory } from '@type/Accessory';
+import { NUMBER_OF_VISIBLE_PRODUCTS } from '@type/Constants';
 
 type TargetProductsType = Phone[] | Tablet[] | Accessory[];
 
@@ -238,6 +233,7 @@ export const ProductDetailsPage = () => {
                             className={styles.previewImg}
                             src={`${img.src}`}
                             alt={img.alt}
+                            loading="lazy"
                           />
                         </button>
                       ))}
