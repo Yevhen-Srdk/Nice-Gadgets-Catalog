@@ -66,9 +66,9 @@ src/
 
 🛠️ **Installation & Setup:**
 
-**1. Clone the repository:** `git clone` [https://github.com/Yevhen-Srdk/react_phone-catalog](https://github.com/Yevhen-Srdk/react_phone-catalog)
+**1. Clone the repository:** `git clone` [https://github.com/Yevhen-Srdk/react_phone-catalog](https://yevhen-srdk.github.io/Nice-Gadgets-Catalog/)
 
-**2. Navigate to the project directory:** `cd` react_phone-catalog
+**2. Navigate to the project directory:** `cd` Nice-Gadgets-Catalog
 
 **3. Install dependencies:** `npm install`
 
